@@ -12,5 +12,9 @@
     "dist/**",
     "node_modules/**"
   ],
-  "words": []
+  "words": [
+    "fsize",
+    "halign",
+    "ITEMPOOLS"
+  ]
 }
