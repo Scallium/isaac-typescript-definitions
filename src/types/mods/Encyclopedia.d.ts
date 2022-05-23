@@ -3,8 +3,8 @@ import { PlayerType } from "../../enums/collections/subTypes";
 declare global {
   const Encyclopedia: EncyclopediaInterface | undefined;
 
+  /** @noSelf */
   interface EncyclopediaInterface {
-    /** @noSelf */
     AddCharacter(args: {
       CompletionTrackerFuncs: [() => EncyclopediaItemVars[]];
       ID: PlayerType;
@@ -12,7 +12,6 @@ declare global {
       Name: string;
     }): void;
 
-    /** @noSelf */
     AddCharacterTainted(args: {
       CompletionTrackerFuncs: [() => EncyclopediaItemVars[]];
       Description: string;
@@ -22,11 +21,10 @@ declare global {
       UnlockFunc: (args: EncyclopediaItemVars) => EncyclopediaItemVars;
     }): void;
 
-    /** @noSelf */
     AddItem(itemTab: {
       ActiveCharge?: number;
       Class?: string;
-      CloseFunc: undefined | ((vars: EncyclopediaItemVars) => void);
+      CloseFunc?: (vars: EncyclopediaItemVars) => void;
       Desc?: string;
       Hide?: boolean;
       ID: number;
@@ -41,7 +39,6 @@ declare global {
 
     AddItemPoolSprite(id: number, sprite: Sprite): void;
 
-    /** @noSelf */
     AddPocketItem(
       itemTab: {
         Class?: string;
@@ -61,7 +58,6 @@ declare global {
       eType: string,
     ): void;
 
-    /** @noSelf */
     AddRune(itemTab: {
       Class?: string;
       Desc?: string;
@@ -76,15 +72,14 @@ declare global {
       WikiDesc?: EncyclopediaWikiDescription;
     }): void;
 
-    /** @noSelf */
     AddTrinket(itemTab: {
-      Class?: string | undefined;
-      Desc?: string | undefined;
-      Hide?: boolean | undefined;
+      Class?: string;
+      Desc?: string;
+      Hide?: boolean;
       ID: number;
-      ModName?: string | undefined;
-      Name?: string | undefined;
-      Sprite?: Sprite | undefined;
+      ModName?: string;
+      Name?: string;
+      Sprite?: Sprite;
       StatusClose?: (vars: EncyclopediaItemVars) => void;
       StatusFunc?: (vars: EncyclopediaItemVars) => EncyclopediaItemVars;
       UnlockFunc?: (vars: EncyclopediaItemVars) => EncyclopediaItemVars | void;
@@ -156,9 +151,9 @@ declare global {
    */
 
   type EncyclopediaWikiDescriptionLine = {
-    clr: number | undefined;
-    fsize: number | undefined;
-    halign: number | undefined;
+    clr?: number;
+    fsize?: number;
+    halign?: number;
     str: string;
   };
 
@@ -169,17 +164,17 @@ declare global {
     CloseFunc(vars: EncyclopediaItemVars): void;
     StatusFunc(vars: EncyclopediaItemVars): EncyclopediaItemVars;
 
-    AllIndex: number | undefined;
+    AllIndex?: number;
     AllIntIndex: number;
     Class: string;
-    Desc: string | undefined;
-    Index: number | undefined;
+    Desc?: string;
+    Index?: number;
     ItemID: number;
-    Name: string | undefined;
-    Pools: int | undefined;
+    Name?: string;
+    Pools?: int;
     Spr: Sprite;
-    Title: string | undefined;
-    WikiDesc: EncyclopediaWikiDescription | undefined;
+    Title?: string;
+    WikiDesc?: EncyclopediaWikiDescription;
     typeString: string;
   }
 }
