@@ -171,7 +171,7 @@ declare global {
     Index?: number;
     ItemID: number;
     Name?: string;
-    Pools?: int;
+    Pools?: EncyclopediaItemPools;
     Spr: Sprite;
     Title?: string;
     WikiDesc?: EncyclopediaWikiDescription;
