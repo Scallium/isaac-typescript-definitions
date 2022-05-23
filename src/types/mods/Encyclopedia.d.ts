@@ -4,6 +4,7 @@ declare global {
   const Encyclopedia: EncyclopediaInterface | undefined;
 
   interface EncyclopediaInterface {
+    /** @noSelf */
     AddCharacter(args: {
       CompletionTrackerFuncs: [() => EncyclopediaItemVars[]];
       ID: PlayerType;
@@ -11,6 +12,7 @@ declare global {
       Name: string;
     }): void;
 
+    /** @noSelf */
     AddCharacterTainted(args: {
       CompletionTrackerFuncs: [() => EncyclopediaItemVars[]];
       Description: string;
@@ -22,81 +24,71 @@ declare global {
 
     /** @noSelf */
     AddItem(itemTab: {
-      ActiveCharge: number | undefined;
-      Class: string | undefined;
+      ActiveCharge?: number;
+      Class?: string;
       CloseFunc: undefined | ((vars: EncyclopediaItemVars) => void);
-      Desc: string | undefined;
-      Hide: boolean | undefined;
+      Desc?: string;
+      Hide?: boolean;
       ID: number;
-      ModName: string | undefined;
-      Name: string | undefined;
-      Pools: int[] | undefined;
-      Sprite: Sprite | undefined;
-      StatusFunc:
-        | undefined
-        | ((vars: EncyclopediaItemVars) => EncyclopediaItemVars);
-      UnlockFunc:
-        | undefined
-        | ((vars: EncyclopediaItemVars) => EncyclopediaItemVars);
-      WikiDesc: EncyclopediaWikiDescription | undefined;
+      ModName?: string;
+      Name?: string;
+      Pools?: int[];
+      Sprite?: Sprite;
+      StatusFunc?: (vars: EncyclopediaItemVars) => EncyclopediaItemVars;
+      UnlockFunc?: (vars: EncyclopediaItemVars) => EncyclopediaItemVars;
+      WikiDesc?: EncyclopediaWikiDescription;
     }): void;
 
     AddItemPoolSprite(id: number, sprite: Sprite): void;
 
+    /** @noSelf */
     AddPocketItem(
       itemTab: {
-        Class: string | undefined;
-        Desc: string | undefined;
-        Hide: boolean | undefined;
+        Class?: string;
+        Desc?: string;
+        Hide?: boolean;
         ID: number;
-        ModName: string | undefined;
-        Name: string | undefined;
-        Sprite: Sprite | undefined;
-        StatusClose: ((vars: EncyclopediaItemVars) => void) | undefined;
-        StatusFunc:
-          | ((vars: EncyclopediaItemVars) => EncyclopediaItemVars)
-          | undefined;
-        UnlockFunc:
-          | ((vars: EncyclopediaItemVars) => EncyclopediaItemVars | void)
-          | undefined;
-        WikiDesc: EncyclopediaWikiDescription | undefined;
+        ModName?: string;
+        Name?: string;
+        Sprite?: Sprite;
+        StatusClose?: (vars: EncyclopediaItemVars) => void;
+        StatusFunc?: (vars: EncyclopediaItemVars) => EncyclopediaItemVars;
+        UnlockFunc?: (
+          vars: EncyclopediaItemVars,
+        ) => EncyclopediaItemVars | void;
+        WikiDesc?: EncyclopediaWikiDescription;
       },
       eType: string,
     ): void;
 
     /** @noSelf */
     AddRune(itemTab: {
-      Class: string;
-      Desc: string | undefined;
+      Class?: string;
+      Desc?: string;
       ID: number;
-      ModName: string | undefined;
-      Name: string | undefined;
-      RuneType: number;
-      Sprite: Sprite | undefined;
-      StatusClose: (vars: EncyclopediaItemVars) => void;
-      StatusFunc: (vars: EncyclopediaItemVars) => EncyclopediaItemVars;
-      UnlockFunc:
-        | ((vars: EncyclopediaItemVars) => EncyclopediaItemVars | void)
-        | undefined;
-      WikiDesc: EncyclopediaWikiDescription | undefined;
+      ModName?: string;
+      Name?: string;
+      RuneType?: number;
+      Sprite?: Sprite;
+      StatusClose?: (vars: EncyclopediaItemVars) => void;
+      StatusFunc?: (vars: EncyclopediaItemVars) => EncyclopediaItemVars;
+      UnlockFunc?: (vars: EncyclopediaItemVars) => EncyclopediaItemVars | void;
+      WikiDesc?: EncyclopediaWikiDescription;
     }): void;
 
+    /** @noSelf */
     AddTrinket(itemTab: {
-      Class: string | undefined;
-      Desc: string | undefined;
-      Hide: boolean | undefined;
+      Class?: string | undefined;
+      Desc?: string | undefined;
+      Hide?: boolean | undefined;
       ID: number;
-      ModName: string | undefined;
-      Name: string | undefined;
-      Sprite: Sprite | undefined;
-      StatusClose: ((vars: EncyclopediaItemVars) => void) | undefined;
-      StatusFunc:
-        | ((vars: EncyclopediaItemVars) => EncyclopediaItemVars)
-        | undefined;
-      UnlockFunc:
-        | ((vars: EncyclopediaItemVars) => EncyclopediaItemVars | void)
-        | undefined;
-      WikiDesc: EncyclopediaWikiDescription | undefined;
+      ModName?: string | undefined;
+      Name?: string | undefined;
+      Sprite?: Sprite | undefined;
+      StatusClose?: (vars: EncyclopediaItemVars) => void;
+      StatusFunc?: (vars: EncyclopediaItemVars) => EncyclopediaItemVars;
+      UnlockFunc?: (vars: EncyclopediaItemVars) => EncyclopediaItemVars | void;
+      WikiDesc?: EncyclopediaWikiDescription;
     }): void;
 
     EIDtoWiki(desc: string, title?: string): void;
