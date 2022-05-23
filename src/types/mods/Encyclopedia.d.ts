@@ -30,7 +30,7 @@ declare global {
       ID: number;
       ModName?: string;
       Name?: string;
-      Pools?: int[];
+      Pools?: EncyclopediaItemPoolType[];
       Sprite?: Sprite;
       StatusFunc?: (vars: EncyclopediaItemVars) => EncyclopediaItemVars;
       UnlockFunc?: (vars: EncyclopediaItemVars) => EncyclopediaItemVars;
